@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .bg {
+        background-color: purple;
+        width: 80%;
+        height: 500px;
+        padding: 0 2rem;
+        border-radius: 20px;
+        position: relative;
+        box-shadow:0px 5px 26px 10px black;
+        border: 2px dashed blue;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        border: 2px solid black;
+        margin: 10px;
+        padding: 0px 10px;
+      }
+      ul {
+        list-style: none;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        gap: 2rem;
+        bottom: 0;
+        border: 2px solid black;
+        position: absolute;
+        padding: 0 2rem;
+      }
+      .content{
+        display: flex;
+        justify-content: center;
+      }
+      #tryagain{
+        display: none;
+        cursor: pointer;
+        background-color: aqua;
+        border: none;
+        border-radius: 20px;
+        padding: 5px;
+        font-size: large;
+        font-weight: bold;
+        color: blue;
+        width: 80%;
+        position: absolute;
+        bottom: 100px;
+      }
+      .correct{
+        color: rgb(94, 228, 94) !important;
+      }
+      .incorrect{
+        color: red !important;
+      }
+      .text-of-typing p span{
+        font-weight: bold;
+        color: white;
+      }
+    #inputfiled{
+        opacity: 0;
+    }
+    .active{
+        color: silver !important;
+        position: relative;
+    }
+    .active::before{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        background-color: greenyellow;
+        width: 100%;
+        height: 2px;
+        opacity: 0;
+        animation: blink 1s ease-in-out  infinite;
+    }
+    @keyframes blink {
+        50%{
+            opacity: 1;
+        }
+        
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+
+  <div class="container">
+    <div class="bg">
+        <input type="text" id="inputfiled" style="margin-top: 1rem" />
+        <div class="" >
+          <div class="text-of-typing">
+            <p></p>
+          </div>
+          <div class="content">
+            <ul>
+              <li class="time">
+                <p>Time:</p>
+                <div class="span"><span>50</span>
+                  <span>s</span></div>
+              </li>
+              <li class="error">
+                <p>Error:</p>
+                <span>0</span>
+              </li>
+              <li class="wpm">
+                <p>Wpm:</p>
+                <span>0</span>
+              </li>
+              <li class="cpm">
+                <p>Cpm:</p>
+                <span>0</span>
+              </li>
+            </ul>
+            <button id="tryagain">Try again</button>
+          </div>
+        </div>
+      </div>
+  </div>
+    <script src="paragraph.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
